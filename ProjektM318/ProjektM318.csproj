@@ -64,6 +64,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,6 +84,24 @@
       <Project>{d0262178-a48f-4de0-807b-e76b63e39421}</Project>
       <Name>SwissTransport</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Earthpng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EarthIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Earth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EarthIcon1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
