@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtvon = new System.Windows.Forms.TextBox();
             this.txthaltestelle = new System.Windows.Forms.TextBox();
             this.txtbis = new System.Windows.Forms.TextBox();
@@ -49,6 +50,8 @@
             this.verspätung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbabfahrt = new System.Windows.Forms.ListBox();
             this.lbankunft = new System.Windows.Forms.ListBox();
+            this.btnhaltestellesearch = new System.Windows.Forms.Button();
+            this.lbhaltestelle = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgverbindungen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +63,7 @@
             this.txtvon.TabIndex = 0;
             this.txtvon.Text = " ";
             this.txtvon.TextChanged += new System.EventHandler(this.txtvon_TextChanged);
+            this.txtvon.Leave += new System.EventHandler(this.txtvon_Leave);
             // 
             // txthaltestelle
             // 
@@ -67,6 +71,8 @@
             this.txthaltestelle.Name = "txthaltestelle";
             this.txthaltestelle.Size = new System.Drawing.Size(100, 22);
             this.txthaltestelle.TabIndex = 3;
+            this.txthaltestelle.TextChanged += new System.EventHandler(this.txthaltestelle_TextChanged);
+            this.txthaltestelle.Leave += new System.EventHandler(this.txthaltestelle_Leave);
             // 
             // txtbis
             // 
@@ -75,6 +81,7 @@
             this.txtbis.Size = new System.Drawing.Size(100, 22);
             this.txtbis.TabIndex = 1;
             this.txtbis.TextChanged += new System.EventHandler(this.txtbis_TextChanged);
+            this.txtbis.Leave += new System.EventHandler(this.txtbis_Leave);
             // 
             // btnwechsel
             // 
@@ -95,7 +102,7 @@
             // 
             // btnsearch
             // 
-            this.btnsearch.Location = new System.Drawing.Point(1103, 84);
+            this.btnsearch.Location = new System.Drawing.Point(1094, 45);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(87, 44);
             this.btnsearch.TabIndex = 2;
@@ -123,27 +130,33 @@
             // 
             // btnvonmap
             // 
-            this.btnvonmap.Location = new System.Drawing.Point(199, 56);
+            this.btnvonmap.Image = ((System.Drawing.Image)(resources.GetObject("btnvonmap.Image")));
+            this.btnvonmap.Location = new System.Drawing.Point(199, 45);
             this.btnvonmap.Name = "btnvonmap";
-            this.btnvonmap.Size = new System.Drawing.Size(75, 23);
+            this.btnvonmap.Size = new System.Drawing.Size(75, 44);
             this.btnvonmap.TabIndex = 4;
             this.btnvonmap.UseVisualStyleBackColor = true;
+            this.btnvonmap.Click += new System.EventHandler(this.btnvonmap_Click);
             // 
             // btnbismap
             // 
-            this.btnbismap.Location = new System.Drawing.Point(539, 56);
+            this.btnbismap.Image = ((System.Drawing.Image)(resources.GetObject("btnbismap.Image")));
+            this.btnbismap.Location = new System.Drawing.Point(539, 45);
             this.btnbismap.Name = "btnbismap";
-            this.btnbismap.Size = new System.Drawing.Size(75, 23);
+            this.btnbismap.Size = new System.Drawing.Size(75, 44);
             this.btnbismap.TabIndex = 5;
             this.btnbismap.UseVisualStyleBackColor = true;
+            this.btnbismap.Click += new System.EventHandler(this.btnbismap_Click);
             // 
             // btnhaltestellemap
             // 
-            this.btnhaltestellemap.Location = new System.Drawing.Point(199, 163);
+            this.btnhaltestellemap.Image = ((System.Drawing.Image)(resources.GetObject("btnhaltestellemap.Image")));
+            this.btnhaltestellemap.Location = new System.Drawing.Point(199, 158);
             this.btnhaltestellemap.Name = "btnhaltestellemap";
-            this.btnhaltestellemap.Size = new System.Drawing.Size(75, 23);
+            this.btnhaltestellemap.Size = new System.Drawing.Size(75, 44);
             this.btnhaltestellemap.TabIndex = 6;
             this.btnhaltestellemap.UseVisualStyleBackColor = true;
+            this.btnhaltestellemap.Click += new System.EventHandler(this.btnhaltestellemap_Click);
             // 
             // dgverbindungen
             // 
@@ -215,6 +228,8 @@
             this.lbabfahrt.Size = new System.Drawing.Size(256, 212);
             this.lbabfahrt.TabIndex = 12;
             this.lbabfahrt.Visible = false;
+            this.lbabfahrt.Enter += new System.EventHandler(this.lbabfahrt_Enter);
+            this.lbabfahrt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbabfahrt_MouseDoubleClick);
             // 
             // lbankunft
             // 
@@ -225,6 +240,28 @@
             this.lbankunft.Size = new System.Drawing.Size(256, 212);
             this.lbankunft.TabIndex = 13;
             this.lbankunft.Visible = false;
+            this.lbankunft.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbankunft_MouseDoubleClick);
+            // 
+            // btnhaltestellesearch
+            // 
+            this.btnhaltestellesearch.Location = new System.Drawing.Point(342, 158);
+            this.btnhaltestellesearch.Name = "btnhaltestellesearch";
+            this.btnhaltestellesearch.Size = new System.Drawing.Size(75, 32);
+            this.btnhaltestellesearch.TabIndex = 14;
+            this.btnhaltestellesearch.Text = "Search";
+            this.btnhaltestellesearch.UseVisualStyleBackColor = true;
+            this.btnhaltestellesearch.Click += new System.EventHandler(this.btnhaltestellesearch_Click);
+            // 
+            // lbhaltestelle
+            // 
+            this.lbhaltestelle.FormattingEnabled = true;
+            this.lbhaltestelle.ItemHeight = 16;
+            this.lbhaltestelle.Location = new System.Drawing.Point(84, 191);
+            this.lbhaltestelle.Name = "lbhaltestelle";
+            this.lbhaltestelle.Size = new System.Drawing.Size(256, 212);
+            this.lbhaltestelle.TabIndex = 15;
+            this.lbhaltestelle.Visible = false;
+            this.lbhaltestelle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbhaltestelle_MouseDoubleClick);
             // 
             // Form1
             // 
@@ -232,7 +269,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1266, 632);
             this.Controls.Add(this.lbankunft);
+            this.Controls.Add(this.lbhaltestelle);
             this.Controls.Add(this.lbabfahrt);
+            this.Controls.Add(this.btnhaltestellesearch);
             this.Controls.Add(this.dgverbindungen);
             this.Controls.Add(this.btnhaltestellemap);
             this.Controls.Add(this.btnbismap);
@@ -276,6 +315,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn verspätung;
         private System.Windows.Forms.ListBox lbabfahrt;
         private System.Windows.Forms.ListBox lbankunft;
+        private System.Windows.Forms.Button btnhaltestellesearch;
+        private System.Windows.Forms.ListBox lbhaltestelle;
     }
 }
 
