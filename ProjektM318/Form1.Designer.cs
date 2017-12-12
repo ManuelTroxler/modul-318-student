@@ -65,6 +65,7 @@
             this.txtvon.TabIndex = 0;
             this.txtvon.Text = " ";
             this.txtvon.TextChanged += new System.EventHandler(this.txtvon_TextChanged);
+            this.txtvon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtvon_KeyDown);
             this.txtvon.Leave += new System.EventHandler(this.txtvon_Leave);
             // 
             // txthaltestelle
@@ -212,7 +213,7 @@
             this.lbabfahrt.Location = new System.Drawing.Point(84, 85);
             this.lbabfahrt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbabfahrt.Name = "lbabfahrt";
-            this.lbabfahrt.Size = new System.Drawing.Size(256, 212);
+            this.lbabfahrt.Size = new System.Drawing.Size(256, 180);
             this.lbabfahrt.TabIndex = 9;
             this.lbabfahrt.Visible = false;
             this.lbabfahrt.Enter += new System.EventHandler(this.lbabfahrt_Enter);
@@ -225,7 +226,7 @@
             this.lbankunft.Location = new System.Drawing.Point(423, 85);
             this.lbankunft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbankunft.Name = "lbankunft";
-            this.lbankunft.Size = new System.Drawing.Size(256, 212);
+            this.lbankunft.Size = new System.Drawing.Size(256, 180);
             this.lbankunft.TabIndex = 10;
             this.lbankunft.Visible = false;
             this.lbankunft.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbankunft_MouseDoubleClick);
@@ -248,7 +249,7 @@
             this.lbhaltestelle.Location = new System.Drawing.Point(84, 191);
             this.lbhaltestelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbhaltestelle.Name = "lbhaltestelle";
-            this.lbhaltestelle.Size = new System.Drawing.Size(256, 212);
+            this.lbhaltestelle.Size = new System.Drawing.Size(256, 180);
             this.lbhaltestelle.TabIndex = 11;
             this.lbhaltestelle.Visible = false;
             this.lbhaltestelle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbhaltestelle_MouseDoubleClick);
@@ -269,9 +270,9 @@
             this.lblbis.Location = new System.Drawing.Point(419, 38);
             this.lblbis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblbis.Name = "lblbis";
-            this.lblbis.Size = new System.Drawing.Size(31, 17);
+            this.lblbis.Size = new System.Drawing.Size(45, 17);
             this.lblbis.TabIndex = 14;
-            this.lblbis.Text = "Bis:";
+            this.lblbis.Text = "Nach:";
             // 
             // lblhaltestelle
             // 
@@ -316,7 +317,10 @@
             this.Controls.Add(this.txtbis);
             this.Controls.Add(this.txthaltestelle);
             this.Controls.Add(this.txtvon);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Fahrplan";
             ((System.ComponentModel.ISupportInitialize)(this.dgverbindungen)).EndInit();

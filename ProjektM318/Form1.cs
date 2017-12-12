@@ -185,5 +185,10 @@ namespace ProjektM318
         {
             this.Close();
         }
+
+        private void txtvon_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
