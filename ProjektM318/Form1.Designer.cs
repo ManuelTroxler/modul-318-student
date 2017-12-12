@@ -33,10 +33,7 @@
             this.txthaltestelle = new System.Windows.Forms.TextBox();
             this.txtbis = new System.Windows.Forms.TextBox();
             this.btnwechsel = new System.Windows.Forms.Button();
-            this.datepicker = new System.Windows.Forms.DateTimePicker();
             this.btnsearch = new System.Windows.Forms.Button();
-            this.btnfrüher = new System.Windows.Forms.Button();
-            this.btnspäter = new System.Windows.Forms.Button();
             this.btnvonmap = new System.Windows.Forms.Button();
             this.btnbismap = new System.Windows.Forms.Button();
             this.btnhaltestellemap = new System.Windows.Forms.Button();
@@ -52,14 +49,19 @@
             this.lbankunft = new System.Windows.Forms.ListBox();
             this.btnhaltestellesearch = new System.Windows.Forms.Button();
             this.lbhaltestelle = new System.Windows.Forms.ListBox();
+            this.lblvon = new System.Windows.Forms.Label();
+            this.lblbis = new System.Windows.Forms.Label();
+            this.lblhaltestelle = new System.Windows.Forms.Label();
+            this.btnclose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgverbindungen)).BeginInit();
             this.SuspendLayout();
             // 
             // txtvon
             // 
-            this.txtvon.Location = new System.Drawing.Point(84, 56);
+            this.txtvon.Location = new System.Drawing.Point(84, 57);
+            this.txtvon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtvon.Name = "txtvon";
-            this.txtvon.Size = new System.Drawing.Size(100, 22);
+            this.txtvon.Size = new System.Drawing.Size(155, 22);
             this.txtvon.TabIndex = 0;
             this.txtvon.Text = " ";
             this.txtvon.TextChanged += new System.EventHandler(this.txtvon_TextChanged);
@@ -67,94 +69,76 @@
             // 
             // txthaltestelle
             // 
-            this.txthaltestelle.Location = new System.Drawing.Point(84, 163);
+            this.txthaltestelle.Location = new System.Drawing.Point(84, 162);
+            this.txthaltestelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txthaltestelle.Name = "txthaltestelle";
-            this.txthaltestelle.Size = new System.Drawing.Size(100, 22);
+            this.txthaltestelle.Size = new System.Drawing.Size(155, 22);
             this.txthaltestelle.TabIndex = 3;
             this.txthaltestelle.TextChanged += new System.EventHandler(this.txthaltestelle_TextChanged);
             this.txthaltestelle.Leave += new System.EventHandler(this.txthaltestelle_Leave);
             // 
             // txtbis
             // 
-            this.txtbis.Location = new System.Drawing.Point(423, 56);
+            this.txtbis.Location = new System.Drawing.Point(423, 57);
+            this.txtbis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbis.Name = "txtbis";
-            this.txtbis.Size = new System.Drawing.Size(100, 22);
+            this.txtbis.Size = new System.Drawing.Size(155, 22);
             this.txtbis.TabIndex = 1;
             this.txtbis.TextChanged += new System.EventHandler(this.txtbis_TextChanged);
             this.txtbis.Leave += new System.EventHandler(this.txtbis_Leave);
             // 
             // btnwechsel
             // 
-            this.btnwechsel.Location = new System.Drawing.Point(301, 56);
+            this.btnwechsel.Image = ((System.Drawing.Image)(resources.GetObject("btnwechsel.Image")));
+            this.btnwechsel.Location = new System.Drawing.Point(318, 48);
+            this.btnwechsel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnwechsel.Name = "btnwechsel";
-            this.btnwechsel.Size = new System.Drawing.Size(75, 23);
+            this.btnwechsel.Size = new System.Drawing.Size(75, 46);
             this.btnwechsel.TabIndex = 8;
-            this.btnwechsel.Text = "<-->";
             this.btnwechsel.UseVisualStyleBackColor = true;
             this.btnwechsel.Click += new System.EventHandler(this.btnwechsel_Click);
             // 
-            // datepicker
-            // 
-            this.datepicker.Location = new System.Drawing.Point(775, 54);
-            this.datepicker.Name = "datepicker";
-            this.datepicker.Size = new System.Drawing.Size(250, 22);
-            this.datepicker.TabIndex = 7;
-            // 
             // btnsearch
             // 
-            this.btnsearch.Location = new System.Drawing.Point(1094, 45);
+            this.btnsearch.Location = new System.Drawing.Point(711, 44);
+            this.btnsearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnsearch.Name = "btnsearch";
-            this.btnsearch.Size = new System.Drawing.Size(87, 44);
+            this.btnsearch.Size = new System.Drawing.Size(169, 50);
             this.btnsearch.TabIndex = 2;
-            this.btnsearch.Text = "Search";
+            this.btnsearch.Text = "Verbindungen Suchen";
             this.btnsearch.UseVisualStyleBackColor = true;
             this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
-            // 
-            // btnfrüher
-            // 
-            this.btnfrüher.Location = new System.Drawing.Point(823, 163);
-            this.btnfrüher.Name = "btnfrüher";
-            this.btnfrüher.Size = new System.Drawing.Size(75, 23);
-            this.btnfrüher.TabIndex = 9;
-            this.btnfrüher.Text = "Früher";
-            this.btnfrüher.UseVisualStyleBackColor = true;
-            // 
-            // btnspäter
-            // 
-            this.btnspäter.Location = new System.Drawing.Point(950, 163);
-            this.btnspäter.Name = "btnspäter";
-            this.btnspäter.Size = new System.Drawing.Size(75, 23);
-            this.btnspäter.TabIndex = 10;
-            this.btnspäter.Text = "Später";
-            this.btnspäter.UseVisualStyleBackColor = true;
             // 
             // btnvonmap
             // 
             this.btnvonmap.Image = ((System.Drawing.Image)(resources.GetObject("btnvonmap.Image")));
-            this.btnvonmap.Location = new System.Drawing.Point(199, 45);
+            this.btnvonmap.Location = new System.Drawing.Point(245, 47);
+            this.btnvonmap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnvonmap.Name = "btnvonmap";
-            this.btnvonmap.Size = new System.Drawing.Size(75, 44);
-            this.btnvonmap.TabIndex = 4;
+            this.btnvonmap.Size = new System.Drawing.Size(51, 47);
+            this.btnvonmap.TabIndex = 5;
             this.btnvonmap.UseVisualStyleBackColor = true;
             this.btnvonmap.Click += new System.EventHandler(this.btnvonmap_Click);
             // 
             // btnbismap
             // 
             this.btnbismap.Image = ((System.Drawing.Image)(resources.GetObject("btnbismap.Image")));
-            this.btnbismap.Location = new System.Drawing.Point(539, 45);
+            this.btnbismap.Location = new System.Drawing.Point(584, 44);
+            this.btnbismap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnbismap.Name = "btnbismap";
-            this.btnbismap.Size = new System.Drawing.Size(75, 44);
-            this.btnbismap.TabIndex = 5;
+            this.btnbismap.Size = new System.Drawing.Size(51, 47);
+            this.btnbismap.TabIndex = 6;
             this.btnbismap.UseVisualStyleBackColor = true;
             this.btnbismap.Click += new System.EventHandler(this.btnbismap_Click);
             // 
             // btnhaltestellemap
             // 
             this.btnhaltestellemap.Image = ((System.Drawing.Image)(resources.GetObject("btnhaltestellemap.Image")));
-            this.btnhaltestellemap.Location = new System.Drawing.Point(199, 158);
+            this.btnhaltestellemap.Location = new System.Drawing.Point(245, 150);
+            this.btnhaltestellemap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnhaltestellemap.Name = "btnhaltestellemap";
-            this.btnhaltestellemap.Size = new System.Drawing.Size(75, 44);
-            this.btnhaltestellemap.TabIndex = 6;
+            this.btnhaltestellemap.Size = new System.Drawing.Size(51, 47);
+            this.btnhaltestellemap.TabIndex = 7;
             this.btnhaltestellemap.UseVisualStyleBackColor = true;
             this.btnhaltestellemap.Click += new System.EventHandler(this.btnhaltestellemap_Click);
             // 
@@ -170,12 +154,14 @@
             this.ankunftszeit,
             this.ankunftszone,
             this.verspätung});
-            this.dgverbindungen.Location = new System.Drawing.Point(84, 211);
+            this.dgverbindungen.Location = new System.Drawing.Point(84, 210);
+            this.dgverbindungen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgverbindungen.Name = "dgverbindungen";
             this.dgverbindungen.ReadOnly = true;
+            this.dgverbindungen.RowHeadersVisible = false;
             this.dgverbindungen.RowTemplate.Height = 24;
-            this.dgverbindungen.Size = new System.Drawing.Size(1106, 364);
-            this.dgverbindungen.TabIndex = 11;
+            this.dgverbindungen.Size = new System.Drawing.Size(1107, 364);
+            this.dgverbindungen.TabIndex = 12;
             // 
             // abfahrtsstation
             // 
@@ -224,9 +210,10 @@
             this.lbabfahrt.FormattingEnabled = true;
             this.lbabfahrt.ItemHeight = 16;
             this.lbabfahrt.Location = new System.Drawing.Point(84, 85);
+            this.lbabfahrt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbabfahrt.Name = "lbabfahrt";
             this.lbabfahrt.Size = new System.Drawing.Size(256, 212);
-            this.lbabfahrt.TabIndex = 12;
+            this.lbabfahrt.TabIndex = 9;
             this.lbabfahrt.Visible = false;
             this.lbabfahrt.Enter += new System.EventHandler(this.lbabfahrt_Enter);
             this.lbabfahrt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbabfahrt_MouseDoubleClick);
@@ -236,19 +223,21 @@
             this.lbankunft.FormattingEnabled = true;
             this.lbankunft.ItemHeight = 16;
             this.lbankunft.Location = new System.Drawing.Point(423, 85);
+            this.lbankunft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbankunft.Name = "lbankunft";
             this.lbankunft.Size = new System.Drawing.Size(256, 212);
-            this.lbankunft.TabIndex = 13;
+            this.lbankunft.TabIndex = 10;
             this.lbankunft.Visible = false;
             this.lbankunft.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbankunft_MouseDoubleClick);
             // 
             // btnhaltestellesearch
             // 
-            this.btnhaltestellesearch.Location = new System.Drawing.Point(342, 158);
+            this.btnhaltestellesearch.Location = new System.Drawing.Point(339, 150);
+            this.btnhaltestellesearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnhaltestellesearch.Name = "btnhaltestellesearch";
-            this.btnhaltestellesearch.Size = new System.Drawing.Size(75, 32);
-            this.btnhaltestellesearch.TabIndex = 14;
-            this.btnhaltestellesearch.Text = "Search";
+            this.btnhaltestellesearch.Size = new System.Drawing.Size(239, 47);
+            this.btnhaltestellesearch.TabIndex = 4;
+            this.btnhaltestellesearch.Text = "Haltestellen Fahrplan Suchen";
             this.btnhaltestellesearch.UseVisualStyleBackColor = true;
             this.btnhaltestellesearch.Click += new System.EventHandler(this.btnhaltestellesearch_Click);
             // 
@@ -257,33 +246,77 @@
             this.lbhaltestelle.FormattingEnabled = true;
             this.lbhaltestelle.ItemHeight = 16;
             this.lbhaltestelle.Location = new System.Drawing.Point(84, 191);
+            this.lbhaltestelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbhaltestelle.Name = "lbhaltestelle";
             this.lbhaltestelle.Size = new System.Drawing.Size(256, 212);
-            this.lbhaltestelle.TabIndex = 15;
+            this.lbhaltestelle.TabIndex = 11;
             this.lbhaltestelle.Visible = false;
             this.lbhaltestelle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbhaltestelle_MouseDoubleClick);
+            // 
+            // lblvon
+            // 
+            this.lblvon.AutoSize = true;
+            this.lblvon.Location = new System.Drawing.Point(80, 38);
+            this.lblvon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblvon.Name = "lblvon";
+            this.lblvon.Size = new System.Drawing.Size(37, 17);
+            this.lblvon.TabIndex = 13;
+            this.lblvon.Text = "Von:";
+            // 
+            // lblbis
+            // 
+            this.lblbis.AutoSize = true;
+            this.lblbis.Location = new System.Drawing.Point(419, 38);
+            this.lblbis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblbis.Name = "lblbis";
+            this.lblbis.Size = new System.Drawing.Size(31, 17);
+            this.lblbis.TabIndex = 14;
+            this.lblbis.Text = "Bis:";
+            // 
+            // lblhaltestelle
+            // 
+            this.lblhaltestelle.AutoSize = true;
+            this.lblhaltestelle.Location = new System.Drawing.Point(80, 144);
+            this.lblhaltestelle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblhaltestelle.Name = "lblhaltestelle";
+            this.lblhaltestelle.Size = new System.Drawing.Size(78, 17);
+            this.lblhaltestelle.TabIndex = 15;
+            this.lblhaltestelle.Text = "Haltestelle:";
+            // 
+            // btnclose
+            // 
+            this.btnclose.Location = new System.Drawing.Point(1114, 593);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(141, 28);
+            this.btnclose.TabIndex = 16;
+            this.btnclose.Text = "Exit";
+            this.btnclose.UseVisualStyleBackColor = true;
+            this.btnclose.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1266, 632);
-            this.Controls.Add(this.lbankunft);
-            this.Controls.Add(this.lbhaltestelle);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1267, 633);
+            this.Controls.Add(this.btnclose);
             this.Controls.Add(this.lbabfahrt);
+            this.Controls.Add(this.lblhaltestelle);
+            this.Controls.Add(this.lblbis);
+            this.Controls.Add(this.lblvon);
+            this.Controls.Add(this.lbhaltestelle);
+            this.Controls.Add(this.lbankunft);
             this.Controls.Add(this.btnhaltestellesearch);
             this.Controls.Add(this.dgverbindungen);
             this.Controls.Add(this.btnhaltestellemap);
             this.Controls.Add(this.btnbismap);
             this.Controls.Add(this.btnvonmap);
-            this.Controls.Add(this.btnspäter);
-            this.Controls.Add(this.btnfrüher);
             this.Controls.Add(this.btnsearch);
-            this.Controls.Add(this.datepicker);
             this.Controls.Add(this.btnwechsel);
             this.Controls.Add(this.txtbis);
             this.Controls.Add(this.txthaltestelle);
             this.Controls.Add(this.txtvon);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Fahrplan";
             ((System.ComponentModel.ISupportInitialize)(this.dgverbindungen)).EndInit();
@@ -298,10 +331,7 @@
         private System.Windows.Forms.TextBox txthaltestelle;
         private System.Windows.Forms.TextBox txtbis;
         private System.Windows.Forms.Button btnwechsel;
-        private System.Windows.Forms.DateTimePicker datepicker;
         private System.Windows.Forms.Button btnsearch;
-        private System.Windows.Forms.Button btnfrüher;
-        private System.Windows.Forms.Button btnspäter;
         private System.Windows.Forms.Button btnvonmap;
         private System.Windows.Forms.Button btnbismap;
         private System.Windows.Forms.Button btnhaltestellemap;
@@ -317,6 +347,10 @@
         private System.Windows.Forms.ListBox lbankunft;
         private System.Windows.Forms.Button btnhaltestellesearch;
         private System.Windows.Forms.ListBox lbhaltestelle;
+        private System.Windows.Forms.Label lblvon;
+        private System.Windows.Forms.Label lblbis;
+        private System.Windows.Forms.Label lblhaltestelle;
+        private System.Windows.Forms.Button btnclose;
     }
 }
 

@@ -180,5 +180,10 @@ namespace ProjektM318
             string map = "https://www.google.ch/maps/place/" + txthaltestelle.Text;
             System.Diagnostics.Process.Start(map);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
