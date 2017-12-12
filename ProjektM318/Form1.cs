@@ -17,33 +17,42 @@ namespace ProjektM318
         {
             InitializeComponent();
             dgverbindungen.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.AcceptButton = btnsearch;
         }
 
         private void btnsearch_Click(object sender, EventArgs e)
         {
-            dgverbindungen.Rows.Clear();
-            SwissTransport.Transport connection = new SwissTransport.Transport();
-            var connect = connection.GetConnections(txtvon.Text, txtbis.Text);
-            foreach(var conn in connect.ConnectionList)
+            try
             {
-                abfahrtsstation.Visible = true;
-                abfahrtszeit.Visible = true;
-                abfahrtszone.Visible = true;
-                ankunftsstation.Visible = true;
-                ankunftszeit.Visible = true;
-                ankunftszone.Visible = true;
-                verspätung.Visible = true;
-                DataGridViewRow row = (DataGridViewRow) dgverbindungen.Rows[0].Clone();
-                row.Cells[0].Value = txtvon.Text;
-                row.Cells[1].Value = DateTime.Parse(conn.From.Departure).ToString("HH:mm");
-                row.Cells[1].Value = row.Cells[1].Value + " h";
-                row.Cells[2].Value = conn.From.Platform;
-                row.Cells[3].Value = txtbis.Text;
-                row.Cells[4].Value = DateTime.Parse(conn.To.Arrival).ToString("HH:mm");
-                row.Cells[4].Value = row.Cells[4].Value + " h";
-                row.Cells[5].Value = conn.To.Platform;
-                row.Cells[6].Value = conn.To.Delay;
-                dgverbindungen.Rows.Add(row);
+                dgverbindungen.Rows.Clear();
+                SwissTransport.Transport connection = new SwissTransport.Transport();
+                var connect = connection.GetConnections(txtvon.Text, txtbis.Text);
+                foreach (var conn in connect.ConnectionList)
+                {
+                    abfahrtsstation.Visible = true;
+                    abfahrtszeit.Visible = true;
+                    abfahrtszone.Visible = true;
+                    ankunftsstation.Visible = true;
+                    ankunftszeit.Visible = true;
+                    ankunftszone.Visible = true;
+                    verspätung.Visible = true;
+                    DataGridViewRow row = (DataGridViewRow) dgverbindungen.Rows[0].Clone();
+                    row.Cells[0].Value = txtvon.Text;
+                    row.Cells[1].Value = DateTime.Parse(conn.From.Departure).ToString("HH:mm");
+                    row.Cells[1].Value = row.Cells[1].Value + " h";
+                    row.Cells[2].Value = conn.From.Platform;
+                    row.Cells[3].Value = txtbis.Text;
+                    row.Cells[4].Value = DateTime.Parse(conn.To.Arrival).ToString("HH:mm");
+                    row.Cells[4].Value = row.Cells[4].Value + " h";
+                    row.Cells[5].Value = conn.To.Platform;
+                    row.Cells[6].Value = conn.To.Delay;
+                    dgverbindungen.Rows.Add(row);
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Es sind keine gültigen Haltestellen eingetragen", "Fehler!");
             }
         }
 
@@ -91,21 +100,28 @@ namespace ProjektM318
 
         private void btnhaltestellesearch_Click(object sender, EventArgs e)
         {
-            dgverbindungen.Rows.Clear();
-            SwissTransport.Transport stationboard = new SwissTransport.Transport();
-            var station = stationboard.GetStationBoard(txthaltestelle.Text);
-            foreach (var stat in station.Entries)
+            try
             {
-                DataGridViewRow row = (DataGridViewRow) dgverbindungen.Rows[0].Clone();
-                row.Cells[0].Value = txthaltestelle.Text;
-                row.Cells[1].Value = stat.Stop.Departure.ToShortTimeString();
-                row.Cells[1].Value = row.Cells[1].Value + " h";
-                row.Cells[2].Value = stat.Stop.Platform;
-                ankunftsstation.Visible = false;
-                ankunftszeit.Visible = false;
-                ankunftszone.Visible = false;
-                verspätung.Visible = false;
-                dgverbindungen.Rows.Add(row);
+                dgverbindungen.Rows.Clear();
+                SwissTransport.Transport stationboard = new SwissTransport.Transport();
+                var station = stationboard.GetStationBoard(txthaltestelle.Text);
+                foreach (var stat in station.Entries)
+                {
+                    DataGridViewRow row = (DataGridViewRow) dgverbindungen.Rows[0].Clone();
+                    row.Cells[0].Value = txthaltestelle.Text;
+                    row.Cells[1].Value = stat.Stop.Departure.ToShortTimeString();
+                    row.Cells[1].Value = row.Cells[1].Value + " h";
+                    row.Cells[2].Value = stat.Stop.Platform;
+                    ankunftsstation.Visible = false;
+                    ankunftszeit.Visible = false;
+                    ankunftszone.Visible = false;
+                    verspätung.Visible = false;
+                    dgverbindungen.Rows.Add(row);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Es ist keine gültige Haltestelle eingetragen", "Fehler!");
             }
         }
 
